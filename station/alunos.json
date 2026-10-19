@@ -1,0 +1,6 @@
+{
+  "_comentario": "Cadastro de alunos: UID do cartão RFID -> perfil. Troque pelos UIDs dos cartões do grupo (o UID aparece no terminal da estação ao aproximar o cartão).",
+  "A1:B2:C3:D4": { "nome": "João Silva", "plano": "Musculação Avançado" },
+  "11:22:33:44": { "nome": "Maria Souza", "plano": "Hipertrofia" },
+  "DE:AD:BE:EF": { "nome": "Carlos Lima", "plano": "Iniciante Completo" }
+}

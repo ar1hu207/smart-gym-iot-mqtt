@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smart Gym · Monitoramento</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23ED145B'/%3E%3Cpath d='M7 13h3v6H7zM22 13h3v6h-3zM10 15h12v2H10z' fill='white'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header class="topo">
+    <div class="marca">
+      <span class="logo" aria-hidden="true">
+        <svg viewBox="0 0 32 32"><path d="M7 13h3v6H7zM22 13h3v6h-3zM10 15h12v2H10zM4 14.5h3v3H4zM25 14.5h3v3h-3z" fill="currentColor"/></svg>
+      </span>
+      <div>
+        <h1>Smart Gym</h1>
+        <p>Central de monitoramento das estações</p>
+      </div>
+    </div>
+    <div class="conexoes">
+      <span id="pill-stream" class="pill pill-aguardando"><i></i><span>Conectando…</span></span>
+      <span id="pill-broker" class="pill pill-aguardando" title="Broker MQTT"><i></i><span>Broker</span></span>
+      <time id="relogio" class="mono"></time>
+    </div>
+  </header>
+
+  <main>
+    <section class="kpis" aria-label="Resumo">
+      <div class="kpi"><span class="kpi-rotulo">Estações livres</span><strong id="kpi-livres" class="kpi-valor cor-livre">0</strong></div>
+      <div class="kpi"><span class="kpi-rotulo">Estações ocupadas</span><strong id="kpi-ocupadas" class="kpi-valor cor-ocupada">0</strong></div>
+      <div class="kpi"><span class="kpi-rotulo">Séries hoje</span><strong id="kpi-series" class="kpi-valor">0</strong></div>
+      <div class="kpi"><span class="kpi-rotulo">Repetições hoje</span><strong id="kpi-reps" class="kpi-valor">0</strong></div>
+    </section>
+
+    <section>
+      <div class="secao-titulo">
+        <h2>Estações</h2>
+        <span id="topico" class="sub mono"></span>
+      </div>
+      <div id="estacoes" class="estacoes">
+        <p class="vazio">Aguardando a primeira mensagem MQTT…</p>
+      </div>
+    </section>
+
+    <section class="inferior">
+      <div class="painel">
+        <div class="secao-titulo">
+          <h2>Histórico recente</h2>
+          <span class="sub">uma linha por série concluída</span>
+        </div>
+        <div class="tabela-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Horário</th><th>Aluno</th><th>Máquina</th><th class="num">Série</th>
+                <th class="num">Reps</th><th class="num">Cadência</th><th class="num">Descanso</th><th>Observações</th>
+              </tr>
+            </thead>
+            <tbody id="historico">
+              <tr><td colspan="8" class="vazio">Nenhuma série registrada ainda.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="painel">
+        <div class="secao-titulo">
+          <h2>Acessos RFID</h2>
+          <span class="sub">tempo real</span>
+        </div>
+        <ul id="acessos" class="acessos">
+          <li class="vazio">Nenhuma leitura de cartão ainda.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <div id="toasts" class="toasts" aria-live="polite"></div>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

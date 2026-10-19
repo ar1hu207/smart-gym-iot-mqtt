@@ -1,0 +1,15 @@
+# Python 3.9 a 3.12 (o MediaPipe 0.10.21 ainda não suporta 3.13)
+
+# Comunicação
+paho-mqtt==2.1.0          # cliente MQTT (publisher e subscriber)
+pyserial==3.5             # leitura do RFID pela porta serial
+
+# Estação (visão computacional)
+mediapipe==0.10.21        # MediaPipe Pose (traz o opencv-contrib-python junto)
+numpy>=1.24,<2
+
+# Dashboard
+Flask==3.1.3
+
+# Testes
+pytest>=8

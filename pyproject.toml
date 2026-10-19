@@ -1,0 +1,9 @@
+[project]
+name = "smart-gym-iot-mqtt"
+version = "1.0.0"
+description = "Smart Gym - Checkpoint 05 (Physical Computing / FIAP): telemetria MQTT de estações de treino com RFID e dashboard web."
+requires-python = ">=3.9,<3.13"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
