@@ -12,9 +12,9 @@ A estação de treino virou um dispositivo conectado. O aluno se identifica com 
 
 | Nome | RM |
 |------|----|
-| _Nome do integrante 1_ | _RM00000_ |
-| _Nome do integrante 2_ | _RM00000_ |
-| _Nome do integrante 3_ | _RM00000_ |
+| Arthur Abonizio | RM555506 |
+| Gabriel Padula | RM554907 |
+| Rodrigo Nakata | RM556417 |
 
 ---
 
